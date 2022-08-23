@@ -11,11 +11,14 @@ import { useAuth } from '../../../context/auth';
 
 type FormValues = {
   email: string;
+  phonenumber: string;
   password: string;
 };
 
 const RegistrationScreen = ({ navigation }) => {
-  const { control, handleSubmit, reset } = useForm<FormValues | any>({
+  const { control, handleSubmit, reset, clearErrors } = useForm<
+    FormValues | any
+  >({
     defaultValues: {
       email: '',
       phonenumber: '',
@@ -92,7 +95,10 @@ const RegistrationScreen = ({ navigation }) => {
             </Button>
 
             <Button
-              onPress={() => navigation.navigate(ROUTES.AUTHENTICATION)}
+              onPress={() => {
+                clearErrors();
+                navigation.navigate(ROUTES.REGISTRATION);
+              }}
               styles={{ marginTop: 8 }}
               appearance="ghost"
               status="info"

@@ -45,10 +45,9 @@ export default function Input(props: InputProps) {
   const [showPassword, setShowPassword] = useState<boolean>(secureTextEntry);
   const [isInFocus, setIsInFocus] = useState<boolean>(false);
 
-  function toggleShowPassword() {
-    console.log('hey');
+  const toggleShowPassword = () => {
     setShowPassword(!showPassword);
-  }
+  };
 
   const renderInputIcon = (props) => {
     if (secureTextEntry) {

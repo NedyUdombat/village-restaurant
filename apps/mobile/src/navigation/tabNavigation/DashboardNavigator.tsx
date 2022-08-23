@@ -16,13 +16,13 @@ const commonTabStyle = {
   marginTop: 8,
 };
 
-const TabIcon = ({ name }: { name: string }) => (
+const TabIcon = ({ name, focused }: { name: string; focused?: boolean }) => (
   <Icon
     style={{
       width: 24,
       height: 24,
     }}
-    fill={colors.primary}
+    fill={focused ? colors.primary : '#B2B2B2'}
     name={name}
   />
 );
@@ -51,7 +51,7 @@ const DashboardNavigator = () => {
           tabBarInactiveTintColor: '#B2B2B2',
           tabBarIcon: ({ focused }) =>
             focused ? (
-              <TabIcon name="home" />
+              <TabIcon focused name="home" />
             ) : (
               <TabIcon name={'home-outline'} />
             ),
@@ -67,7 +67,7 @@ const DashboardNavigator = () => {
           tabBarInactiveTintColor: '#B2B2B2',
           tabBarIcon: ({ focused }) =>
             focused ? (
-              <TabIcon name={'shopping-bag'} />
+              <TabIcon focused name={'shopping-bag'} />
             ) : (
               <TabIcon name={'shopping-bag-outline'} />
             ),
@@ -83,7 +83,7 @@ const DashboardNavigator = () => {
           tabBarInactiveTintColor: '#B2B2B2',
           tabBarIcon: ({ focused }) =>
             focused ? (
-              <TabIcon name={'settings-2'} />
+              <TabIcon focused name={'settings-2'} />
             ) : (
               <TabIcon name={'settings-2-outline'} />
             ),

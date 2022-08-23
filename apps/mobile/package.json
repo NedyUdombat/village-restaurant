@@ -3,11 +3,20 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
+    "@eva-design/eva": "*",
+    "@react-navigation/bottom-tabs": "*",
+    "@react-navigation/native": "*",
+    "@react-navigation/native-stack": "*",
     "@testing-library/jest-native": "*",
     "@testing-library/react-native": "*",
+    "@ui-kitten/components": "*",
+    "@ui-kitten/eva-icons": "*",
     "react": "*",
+    "react-hook-form": "*",
     "react-native": "*",
     "react-native-config": "*",
+    "react-native-screens": "*",
+    "react-native-safe-area-context": "*",
     "react-native-svg": "*",
     "@react-native-async-storage/async-storage": "*"
   }

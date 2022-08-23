@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { ROUTES } from '../lib/routes';
 import AuthenticationScreen from '../screens/auth/authentication/AuthenticationScreen';
 import RegistrationScreen from '../screens/auth/registration/RegistrationScreen';
+import OnboardingScreen from '../screens/onboarding/OnboardingScreen';
 // import ForgotPasswordScreen from '../screens/auth/forgotPassword/ForgotPasswordScreen';
 // import ResetPasswordScreen from '../screens/auth/resetPassword/ResetPasswordScreen';
 // import VerificationScreen from '../screens/auth/verification/VerificationScreen';
@@ -17,8 +18,9 @@ const AuthNavigator = () => {
       screenOptions={{
         headerShown: false,
       }}
-      initialRouteName={ROUTES.AUTHENTICATION}
+      initialRouteName={ROUTES.ONBOARDING}
     >
+      <Stack.Screen name={ROUTES.ONBOARDING} component={OnboardingScreen} />
       <Stack.Screen
         name={ROUTES.AUTHENTICATION}
         component={AuthenticationScreen}

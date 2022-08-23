@@ -15,7 +15,7 @@ export default StyleSheet.create({
     paddingVertical: 32,
   },
   title: {
-    color: colors.oxfordBlue,
+    color: colors.primary,
     fontWeight: '700',
     fontSize: 24,
     lineHeight: 32,

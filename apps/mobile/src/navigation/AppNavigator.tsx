@@ -4,7 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { ROUTES } from '../lib/routes';
 import AuthNavigator from './AuthNavigator';
-// import DashboardNavigator from './tabNavigation/DashboardNavigator';
+import DashboardNavigator from './tabNavigation/DashboardNavigator';
 import { useAuth } from '../context/auth';
 import { Loading } from '../components/loading/Loading';
 // import MainNavigator from './screenNavigation';
@@ -22,17 +22,17 @@ const AuthStack = () => (
   </Stack.Navigator>
 );
 
-// const MainStack = () => (
-//   <Stack.Navigator
-//     screenOptions={{
-//       headerShown: false,
-//     }}
-//     initialRouteName={ROUTES.DASHBOARD}
-//   >
-//     <Stack.Screen name={ROUTES.DASHBOARD} component={DashboardNavigator} />
-//     <Stack.Screen name={ROUTES.MAINBASE} component={MainNavigator} />
-//   </Stack.Navigator>
-// );
+const MainStack = () => (
+  <Stack.Navigator
+    screenOptions={{
+      headerShown: false,
+    }}
+    initialRouteName={ROUTES.DASHBOARD}
+  >
+    <Stack.Screen name={ROUTES.DASHBOARD} component={DashboardNavigator} />
+    {/* <Stack.Screen name={ROUTES.MAINBASE} component={MainNavigator} /> */}
+  </Stack.Navigator>
+);
 
 const AppNavigator = () => {
   const { authData, loading } = useAuth();
@@ -43,7 +43,8 @@ const AppNavigator = () => {
   return (
     <NavigationContainer>
       {/* {authData ? <MainStack /> : <AuthStack />} */}
-      <AuthStack />
+      <MainStack />
+      {/* <AuthStack /> */}
     </NavigationContainer>
   );
 };

@@ -1,21 +1,23 @@
 import { StyleSheet } from 'react-native';
-import colors from '../../../lib/colors';
+import colors from '../../lib/colors';
 
 export default StyleSheet.create({
   container: {
-    backgroundColor: '#ffffff',
+    backgroundColor: colors.primary,
     flex: 1,
     minHeight: '100%',
   },
   viewContainer: {
     paddingHorizontal: 24,
     minHeight: '100%',
+    paddingBottom: 100,
   },
   logoContainer: {
     paddingVertical: 32,
   },
   title: {
-    color: colors.primary,
+    marginTop: 'auto',
+    color: colors.white,
     fontWeight: '700',
     fontSize: 24,
     lineHeight: 32,
@@ -23,7 +25,7 @@ export default StyleSheet.create({
     // fontFamily: fonts.avertaBold,
   },
   subtitle: {
-    color: '#4D4D4D',
+    color: '#f2f2f2',
     fontWeight: '400',
     fontSize: 14,
     lineHeight: 22,

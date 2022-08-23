@@ -15,7 +15,9 @@ type FormValues = {
 };
 
 const AuthenticationScreen = ({ navigation }) => {
-  const { control, handleSubmit, reset } = useForm<FormValues | any>({
+  const { control, handleSubmit, reset, clearErrors } = useForm<
+    FormValues | any
+  >({
     defaultValues: {
       email: '',
       password: '',
@@ -25,7 +27,6 @@ const AuthenticationScreen = ({ navigation }) => {
 
   const handleAuthentication = (data) => {
     reset({ password: '' });
-    console.log('data---', data);
     return authenticate(data);
   };
 
@@ -77,7 +78,10 @@ const AuthenticationScreen = ({ navigation }) => {
                 appearance="ghost"
                 size={'small'}
                 status={'danger'}
-                onPress={() => navigation.navigate(ROUTES.FORGOT_PASSWORD)}
+                onPress={() => {
+                  clearErrors();
+                  navigation.navigate(ROUTES.FORGOT_PASSWORD);
+                }}
               >
                 <Text status="danger">Forgot Password?</Text>
               </Button>
@@ -96,7 +100,10 @@ const AuthenticationScreen = ({ navigation }) => {
             </Button>
 
             <Button
-              onPress={() => navigation.navigate(ROUTES.REGISTRATION)}
+              onPress={() => {
+                clearErrors();
+                navigation.navigate(ROUTES.REGISTRATION);
+              }}
               styles={{ marginTop: 8 }}
               appearance="ghost"
               status="info"

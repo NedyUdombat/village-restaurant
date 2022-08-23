@@ -7,6 +7,7 @@ export enum ROUTES {
   POST_SIGN_UP = 'Post_sign_up',
   MAIN = 'Main',
   MAINBASE = 'Mainbase',
+  ONBOARDING = 'ONBOARDING',
 
   /**
    * NavIgators(s)
@@ -30,8 +31,7 @@ export enum ROUTES {
    * Dashboard Route(s)
    */
   HOME = 'Home',
-  PENSION = 'Pension',
-  WALLET = 'Wallet',
+  ORDERS = 'Orders',
   SETTINGS = 'Settings',
 
   /**

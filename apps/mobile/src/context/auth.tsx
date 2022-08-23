@@ -16,7 +16,7 @@ type AuthContextData = {
   loading: boolean;
   authenticate: (data: any) => void;
   register: (data: any) => void;
-  // signOut(): void;
+  signOut(): void;
   // forgotPassword: (data: any) => void;
   // resetPassword: (data: any) => void;
   // verification: (data: any) => void;
@@ -124,7 +124,7 @@ const AuthProvider: React.FC<AuthProviderProps> = ({
         loading,
         authenticate,
         register,
-        // signOut,
+        signOut,
         // setAuthError,
         // isLoading,
         // bvnVerified,
